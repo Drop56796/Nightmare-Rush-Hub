@@ -16,119 +16,120 @@ local Tab = Window:MakeTab({
 
 Tab:AddLabel("Mode -- other：") 
 
-Tab1:AddButton({
+Tab:AddButton({
 	Name = "硬核模式",
 	Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/JevilOhio/Doors-Hardcore-noonie-ver-/main/Doors%20Hardcore%20(noonie)"))() 
   	end    
 })
 
-Tab1:AddButton({
+
+Tab:AddButton({
 	Name = "硬核模式重置",
 	Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/munciseek/-v6/main/v6"))() 
   	end    
 })
 
-Tab1:AddButton({
+Tab:AddButton({
 	Name = "硬核模式糟糕",
 	Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/munciseek/bad-hardcore-/main/badharhcore"))() 
   	end    
 })
 
-Tab1:AddButton({
+Tab:AddButton({
 	Name = "无尽模式",
 	Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/munciseek/symmetrical-octo-umbrella/main/ff"))()
   	end    
 })
 
-Tab1:AddButton({
+Tab:AddButton({
 	Name = "碎片模式",
 	Callback = function()
         loadstring(game:HttpGet("https://glot.io/snippets/gpw1ypnl5o/raw/main.lua"))()
   	end    
 })
 
-Tab1:AddButton({
+Tab:AddButton({
 	Name = "生日模式",
 	Callback = function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/plamen6789/BirthdayModeDOORS/main/BirthdayModeScript'))()
   	end    
 })
 
-Tab1:AddButton({
+Tab:AddButton({
 	Name = "困难模式",
 	Callback = function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/plamen6789/HardcoreScriptDOORS/main/HardcoreModeScript'))()
   	end    
 })
 
-Tab1:AddButton({
+Tab:AddButton({
 	Name = "朦胧模式",
 	Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/munciseek/cautious-robot/main/mm"))()
   	end    
 })
 
-Tab1:AddButton({
+Tab:AddButton({
 	Name = "恐惧模式",
 	Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/cool59572/freestuff/main/Mods/FearMode.lua"))()
   	end    
 })
 
-Tab1:AddButton({
+Tab:AddButton({
 	Name = "恐惧模式单人",
 	Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/cool59572/freestuff/main/Fear_mode_multiplayer.lua"))()
   	end    
 })
 
-Tab1:AddButton({
+Tab:AddButton({
 	Name = "巨魔模式",
 	Callback = function()
         loadstring(game:HttpGet("https://glot.io/snippets/gotfeffesc/raw/main.lua"))()
   	end    
 })
 
-Tab1:AddButton({
+Tab:AddButton({
 	Name = "极端模式",
 	Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/munciseek/eee/main/wtf"))()
   	end    
 })
 
-Tab1:AddButton({
+Tab:AddButton({
 	Name = "哈默模式",
 	Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/munciseek/anmoc/main/hamod"))()
   	end    
 })
 
-Tab1:AddButton({
+Tab:AddButton({
 	Name = "福瑞模式",
 	Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/munciseek/furry/main/furry"))()
   	end    
 })
 
-Tab1:AddButton({
+Tab:AddButton({
 	Name = "噩梦模式",
 	Callback = function()
         loadstring(game:HttpGet(("https://raw.githubusercontent.com/thefigureblack/doors/main/insanemodev5.lua"),true))()
   	end    
 })
 
-Tab1:AddButton({
+Tab:AddButton({
 	Name = "疯狂模式",
 	Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/munciseek/-/main/%E5%99%A9%E6%A2%A6%E6%A8%A1%E5%BC%8F"))()
   	end    
 })
 
-Tab1:AddButton({
+Tab:AddButton({
 	Name = "不可能模式",
 	Callback = function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/Ukazix/impossible-mode/main/Protected_79.lua.txt'))()
