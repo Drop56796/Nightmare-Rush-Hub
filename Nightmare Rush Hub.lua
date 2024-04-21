@@ -1,867 +1,754 @@
-local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Orion/main/source"))()
-local LBLG = Instance.new("ScreenGui", getParent)
-local LBL = Instance.new("TextLabel", getParent)
-local player = game.Players.LocalPlayer
+game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "MR-Doors"; Text ="Doors"; Duration = 10; })
 
-LBLG.Name = "LBLG"
-LBLG.Parent = game.CoreGui
-LBLG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-LBLG.Enabled = true
-LBL.Name = "LBL"
-LBL.Parent = LBLG
-LBL.BackgroundColor3 = Color3.new(1, 1, 1)
-LBL.BackgroundTransparency = 1
-LBL.BorderColor3 = Color3.new(0, 0, 0)
-LBL.Position = UDim2.new(0.75,0,0.010,0)
-LBL.Size = UDim2.new(0, 133, 0, 30)
-LBL.Font = Enum.Font.GothamSemibold
-LBL.Text = "TextLabel"
-LBL.TextColor3 = Color3.new(1, 1, 1)
-LBL.TextScaled = true
-LBL.TextSize = 14
-LBL.TextWrapped = true
-LBL.Visible = true
+local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
 
-local FpsLabel = LBL
-local Heartbeat = game:GetService("RunService").Heartbeat
-local LastIteration, Start
-local FrameUpdateTable = { }
+local Window = OrionLib:MakeWindow({Name = "MR-Doors", HidePremium = false, SaveConfig = true,IntroText = "MR-Doors", ConfigFolder = "Doors"})
 
-local function HeartbeatUpdate()
-	LastIteration = tick()
-	for Index = #FrameUpdateTable, 1, -1 do
-		FrameUpdateTable[Index + 1] = (FrameUpdateTable[Index] >= LastIteration - 1) and FrameUpdateTable[Index] or nil
-	end
-	FrameUpdateTable[1] = LastIteration
-	local CurrentFPS = (tick() - Start >= 1 and #FrameUpdateTable) or (#FrameUpdateTable / (tick() - Start))
-	CurrentFPS = CurrentFPS - CurrentFPS % 1
-	FpsLabel.Text = ("北京时间:"..os.date("%H").."时"..os.date("%M").."分"..os.date("%S"))
-end
-Start = tick()
-Heartbeat:Connect(HeartbeatUpdate)
-local Window = OrionLib:MakeWindow({Name = "Erika HubV2", HidePremium = false, SaveConfig = true,IntroText = "slience Script V1.5Beta", ConfigFolder = "Beta Warning"})
+game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "欢迎使用"; Text ="1.0"; Duration = 10; })
 
-game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "Pro Max"; Text ="Free Script"; Duration = 4; })
+local Tab = Window:MakeTab({
 
-local about = Window:MakeTab({
-    Name = "普通的公告",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-
-})
-
-about:AddParagraph("Remake Script")
-about:AddParagraph("F**K You")
-about:AddParagraph("F**K")
-about:AddParagraph("F**K")
-
-local Tab =Window:MakeTab({
-
-	Name = "这就是普通的脚本",
-
-	Icon = "rbxassetid://4483345998",
+	Name = "Mode",	Icon = "rbxassetid://7734068321",
 
 	PremiumOnly = false
 
 })
 
-Tab:AddButton({
+Tab:AddLabel("Mode -- other：") 
 
-	Name = "Old Script Remake",
-
+Tab1:AddButton({
+	Name = "硬核模式",
 	Callback = function()
-
-     setclipboard("loadstring(game:HttpGet("https://raw.githubusercontent.com/Drop56796/slience-Script-Remake/Script-Remake/Remake%20Script.lua"))()")
-
-  	end
-
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/JevilOhio/Doors-Hardcore-noonie-ver-/main/Doors%20Hardcore%20(noonie)"))() 
+  	end    
 })
 
-Tab:AddButton({
-
-	Name = "...",
-
+Tab1:AddButton({
+	Name = "硬核模式重置",
 	Callback = function()
-
-     setclipboard("...")
-
-  	end
-
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/munciseek/-v6/main/v6"))() 
+  	end    
 })
 
-Tab:AddButton({
-
-	Name = "....",
-
+Tab1:AddButton({
+	Name = "硬核模式糟糕",
 	Callback = function()
-
-     setclipboard("..."))
-
-  	end
-
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/munciseek/bad-hardcore-/main/badharhcore"))() 
+  	end    
 })
 
-OrionLib:MakeNotification({
-	Name = "想要更多脚本请进群",
-	Content = "群号244463271",
-	Image = "rbxassetid://4483345998",
-	Time = 2
-
-})
-
-local Tab =Window:MakeTab({
-    Name = "通用",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-Tab:AddTextbox({
-	Name = "移动速度",
-	Default = "",
-	TextDisappear = true,
-	Callback = function(Value)
-		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-	end
-})
-
-Tab:AddTextbox({
-	Name = "跳跃高度",
-	Default = "",
-	TextDisappear = true,
-	Callback = function(Value)
-		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
-	end
-})
-
-Tab:AddButton({	
-
-Name = "工具包",	
-
-Callback = function()	loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/BTools.txt"))()	  	
-
-     end
-
-})
-
-Tab:AddButton({
-    Name = "隐身按E",
+Tab1:AddButton({
+	Name = "无尽模式",
 	Callback = function()
-	 loadstring(game:HttpGet('https://pastebin.com/raw/nwGEvkez'))()
-	end
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/munciseek/symmetrical-octo-umbrella/main/ff"))()
+  	end    
 })
 
-Tab:AddButton({
-    Name = "飞车",
+Tab1:AddButton({
+	Name = "碎片模式",
 	Callback = function()
-	loadstring(game:HttpGet("https://pastebin.com/raw/MHE1cbWF"))()
-	end
+        loadstring(game:HttpGet("https://glot.io/snippets/gpw1ypnl5o/raw/main.lua"))()
+  	end    
 })
 
-Tab:AddButton({
-	Name = "飞行V3",
+Tab1:AddButton({
+	Name = "生日模式",
 	Callback = function()
-    loadstring(game:HttpGet("https://shz.al/Bnri"))()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/plamen6789/BirthdayModeDOORS/main/BirthdayModeScript'))()
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "困难模式",
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/plamen6789/HardcoreScriptDOORS/main/HardcoreModeScript'))()
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "朦胧模式",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/munciseek/cautious-robot/main/mm"))()
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "恐惧模式",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/cool59572/freestuff/main/Mods/FearMode.lua"))()
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "恐惧模式单人",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/cool59572/freestuff/main/Fear_mode_multiplayer.lua"))()
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "巨魔模式",
+	Callback = function()
+        loadstring(game:HttpGet("https://glot.io/snippets/gotfeffesc/raw/main.lua"))()
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "极端模式",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/munciseek/eee/main/wtf"))()
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "哈默模式",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/munciseek/anmoc/main/hamod"))()
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "福瑞模式",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/munciseek/furry/main/furry"))()
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "噩梦模式",
+	Callback = function()
+        loadstring(game:HttpGet(("https://raw.githubusercontent.com/thefigureblack/doors/main/insanemodev5.lua"),true))()
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "疯狂模式",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/munciseek/-/main/%E5%99%A9%E6%A2%A6%E6%A8%A1%E5%BC%8F"))()
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "不可能模式",
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Ukazix/impossible-mode/main/Protected_79.lua.txt'))()
   	end    
 })
 
 Tab:AddButton({
 
-	Name = "IY指令",
+	Name = "十字架（模型）",
 
 	Callback = function()
 
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+     local exampleTool = game:GetObjects("rbxassetid://11712848097")[1]
 
-  	end    
+exampleTool.Parent = game.Players.LocalPlayer.Backpack
+
+	end
 
 })
 
 Tab:AddButton({
-	Name = "透视",
+
+	Name = "吸铁石",
+
 	Callback = function()
-	local Players = game:GetService("Players"):GetChildren()
-local RunService = game:GetService("RunService")
-local highlight = Instance.new("Highlight")
-highlight.Name = "Highlight"
 
-for i, v in pairs(Players) do
-    repeat wait() until v.Character
-    if not v.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Highlight") then
-        local highlightClone = highlight:Clone()
-        highlightClone.Adornee = v.Character
-        highlightClone.Parent = v.Character:FindFirstChild("HumanoidRootPart")
-        highlightClone.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-        highlightClone.Name = "Highlight"
-    end
-end
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/MrNeRD0/Doors-Hack/main/MagnetByNerd.lua"))()
 
-game.Players.PlayerAdded:Connect(function(player)
-    repeat wait() until player.Character
-    if not player.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Highlight") then
-        local highlightClone = highlight:Clone()
-        highlightClone.Adornee = player.Character
-        highlightClone.Parent = player.Character:FindFirstChild("HumanoidRootPart")
-        highlightClone.Name = "Highlight"
-    end
-end)
+	end
 
-game.Players.PlayerRemoving:Connect(function(playerRemoved)
-    playerRemoved.Character:FindFirstChild("HumanoidRootPart").Highlight:Destroy()
-end)
+})
 
-RunService.Heartbeat:Connect(function()
-    for i, v in pairs(Players) do
-        repeat wait() until v.Character
-        if not v.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Highlight") then
-            local highlightClone = highlight:Clone()
-            highlightClone.Adornee = v.Character
-            highlightClone.Parent = v.Character:FindFirstChild("HumanoidRootPart")
-            highlightClone.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-            highlightClone.Name = "Highlight"
-            task.wait()
+Tab:AddButton({
+
+	Name = "激光枪",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/K0t1n/Public/main/Laser%20Gun"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+    Name = "枪（已修复）",
+
+    Callback = function ()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/ZepsyyCodesLUA/Utilities/main/DOORSFpsGun.lua"))() 
+
         end
-end
-end)
-	end 
+
+})
+
+Tab:AddButton({
+
+	Name = "手电筒",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/K0t1n/Public/main/Normal%20Flashlight"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "冰淇淋",	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/wshibsiyedehl/wuphuoq/main/%E5%86%B0%E6%B7%87%E6%B7%8B"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "气球",
+
+	Callback = function()
+
+      loadstring(game:HttpGet('https://raw.githubusercontent.com/wshibsiyedehl/wuphuoq/main/%E6%B0%94%E7%90%83%E5%91%80'))()
+    
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "汉堡",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/wshibsiyedehl/wuphuoq/main/%E6%B0%94%E7%90%83%E5%91%80"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "十字架（已修复特效）",
+
+    Callback = function()
+
+     loadstring(game:HttpGet('https://gist.githubusercontent.com/C00LBOZO/0c78ad8c74ca26324c87ede16ce8b387/raw/c0887ac0d24fde80bea11ab1a6a696ec296af272/Crucifix'))()
+
+    end
+
+})
+
+local Tab = Window:MakeTab({
+
+	Name = "Doors脚本",	Icon = "rbxassetid://4483345998",
+
+	PremiumOnly = false
+
+})
+
+local Section = Tab:AddSection({
+
+	Name = "来自油管与QQ回收站的脚本"
+
+})
+
+Tab:AddButton({
+
+	Name = "焯坤好用",
+
+	Callback = function()
+
+     loadstring(game:HttpGet('https://pastebin.com/raw/R8QMbhzv'))()
+
+  	end    
+
+})
+
+Tab:AddButton({
+
+	Name = "POPDOORS（有点问题）",
+
+	Callback = function()
+
+     loadstring(game:HttpGet(("https://raw.githubusercontent.com/mstudio45/poopdoors_edited/main/poopdoors_edited.lua"),true))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "DX（第三版）",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/DXuwu/test-lol/main/YO.lua"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "变身(有些问题)",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/ChronoAccelerator/Public-Scripts/main/Morphing/MorphScript.lua"))();
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "微山DOORS最新",	Callback = function()
+
+     --微山doors 2.3.2(愚人节快乐)
+
+loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\117\72\72\112\56\102\122\83"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "DOORS神级难度（配置差不要玩）",
+
+	Callback = function()
+
+     loadstring(game:HttpGet('https://raw.githubusercontent.com/Ukazix/impossible-mode/main/Protected_79.lua.txt'))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "DOORS(港夜)",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/6kfed0tP"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "DOORS(高质量)",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/GamingScripter/Darkrai-X/main/Games/Doors"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "DOORS猫猫制作",
+
+	Callback = function()
+
+     loadstring(game:HttpGet('https://pastebin.com/raw/m1mcGCzi'))()
+
+   	end
+
+})
+
+Tab:AddButton({
+
+	Name = "未测",	Callback = function()
+
+     loadstring(game:HttpGet("https://github.com/DocYogurt/free/raw/main/long"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "某云汉化版",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/EntitySpawner/main/doors(orionlib).lua"))()
+
+  	end
+
+})
+
+Tab:AddButton({
+
+	Name = "ScriptVY",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Doors/Script.lua"))()
+
+  	end
+
+})
+
+Tab:AddButton({
+
+	Name = "自动的ROOMS",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/r0vbVz9T"))()
+
+  	end
+
+})
+
+local Tab = Window:MakeTab({
+
+	Name = "Doors玩家功能",	Icon = "rbxassetid://11372950109",
+
+	PremiumOnly = false
+
+})
+
+
+Tab:AddButton({
+
+	Name = "飞行PC端（搭配键盘）",	Callback = function()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/G3GnBCyC"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "电脑键盘（搭配PC飞行）",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "拆掉墙壁",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/YCGN6bnD"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "拆除假的门",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/ZcNPGJfQ"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "删除门的框架",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/4m2Nw1Kr"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "走得飞快",	Callback = function()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/rqA4YPzi", true))() 
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "走的较慢",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/HFLkawSE", true))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "全亮",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/4LDKiJ5a"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "亮度+10",
+
+	Callback = function()
+
+     loadstring(game:HttpGet('https://pastebin.com/raw/CbRsLfts'))() 
+
+	end
+
+})
+
+local Tab = Window:MakeTab({
+
+	Name = "杂项",	Icon = "rbxassetid://10483855823",
+
+	PremiumOnly = false
+
 })
 
 Tab:AddToggle({
-	Name = "穿墙",
-	Default = false,
-	Callback = function(Value)
-		if Value then
-		    Noclip = true
-		    Stepped = game.RunService.Stepped:Connect(function()
-			    if Noclip == true then
-				    for a, b in pairs(game.Workspace:GetChildren()) do
-                        if b.Name == game.Players.LocalPlayer.Name then
-                            for i, v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetChildren()) do
-                                if v:IsA("BasePart") then
-                                    v.CanCollide = false
-                                end
-                            end
-                        end
-                    end
-			    else
-				    Stepped:Disconnect()
-			    end
-		    end)
-	    else
-		    Noclip = false
-	    end
-	end
+
+	Name = "房间刷新时/自动躲避Rush Ambush",    Callback = function ()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/BaFjFuCk"))()
+
+  	end    
+
 })
 
 Tab:AddToggle({
-	Name = "夜视",
-	Default = false,
+
+	Name = "预测Seek/心跳不输/无screech/即刻/无火/互动",
+
+    Callback = function ()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/kXanyBLY"))()
+
+  	end    
+
+})
+
+Tab:AddButton({
+
+	Name = "完成断路器盒子",
+
+	Callback = function()
+
+        game:GetService("ReplicatedStorage").Bricks.EBF:FireServer()
+
+  	end    
+
+})
+
+local Tab = Window:MakeTab({
+
+	Name = "UI与实体",	Icon = "rbxassetid://4483345998",
+
+	PremiumOnly = false
+
+})
+
+local Section = Tab:AddSection({
+
+	Name = "UI不是真的"
+
+})
+
+local EnabledEntities={
+
+    EnabledScreech=false,
+
+    EnabledHalt=false,
+
+    EnabledGlitch=false,
+
+}
+
+Tab:AddToggle({
+
+    Name = "无视 Screech",
+
+	CurrentValue = false,
+
+	Flag = "IgnoreScreech",
+
 	Callback = function(Value)
-		if Value then
-		    game.Lighting.Ambient = Color3.new(1, 1, 1)
-		else
-		    game.Lighting.Ambient = Color3.new(0, 0, 0)
-		end
-	end
-})
 
-Tab:AddButton({
+        EnabledEntities.EnabledScreech = Value
 
-	Name = "撅人汉化（羞涩）",
-
-	Callback = function()
-
-local SimpleSexGUI = Instance.new("ScreenGui")
- 
-local FGUI = Instance.new("Frame")
- 
-local btnNaked = Instance.new("TextButton")
- 
-local btnSex = Instance.new("TextButton")
- 
-local tbxVictim = Instance.new("TextBox")
- 
-local lblFUCKEMALL = Instance.new("TextLabel")
- 
-local ImageLabel = Instance.new("ImageLabel")
- 
-local lbltitle = Instance.new("TextLabel")
- 
-local TextLabel = Instance.new("TextLabel")
- 
- 
- 
- 
- 
- 
- 
- 
---Properties
- 
-SimpleSexGUI.Name = "SimpleSexGUI"
-SimpleSexGUI.Parent = game.CoreGui
- 
- 
-FGUI.Name = "FGUI"
-FGUI.Parent = SimpleSexGUI
-FGUI.BackgroundColor3 = Color3.new(255,255,255)
-FGUI.BorderSizePixel = 1
-FGUI.Position = UDim2.new(0,0, 0.667, 0)
-FGUI.Size = UDim2.new(0,317, 0,271)
-FGUI.Draggable = true
- 
- 
- 
-lbltitle.Name = "Title"
-lbltitle.Parent = FGUI
-lbltitle.BackgroundColor3 = Color3.new(255,255,255)
-lbltitle.BorderSizePixel = 1
-lbltitle.Position = UDim2.new (0, 0,-0.122, 0)
-lbltitle.Size = UDim2.new (0, 317,0, 33)
-lbltitle.Visible = true
-lbltitle.Active = true
-lbltitle.Draggable = false
-lbltitle.Selectable = true
-lbltitle.Font = Enum.Font.SourceSansBold
-lbltitle.Text = "一个简单的操蛋脚本!!"
-lbltitle.TextColor3 = Color3.new(0, 0, 0)
-lbltitle.TextSize = 20
- 
- 
- 
- 
- 
-btnSex.Name = "Sex"
-btnSex.Parent = FGUI
-btnSex.BackgroundColor3 = Color3.new(255,255,255)
-btnSex.BorderSizePixel = 1
-btnSex.Position = UDim2.new (0.044, 0,0.229, 0)
-btnSex.Size = UDim2.new (0, 99,0, 31)
-btnSex.Visible = true
-btnSex.Active = true
-btnSex.Draggable = false
-btnSex.Selectable = true
-btnSex.Font = Enum.Font.SourceSansBold
-btnSex.Text = "让我们操蛋吧!!"
-btnSex.TextColor3 = Color3.new(0, 0, 0)
-btnSex.TextSize = 20
- 
- 
- 
- 
-tbxVictim.Name = "VictimTEXT"
-tbxVictim.Parent = FGUI
-tbxVictim.BackgroundColor3 = Color3.new(255,255,255)
-tbxVictim.BorderSizePixel = 1
-tbxVictim.Position = UDim2.new (0.533, 0,0.229, 0)
-tbxVictim.Size = UDim2.new (0, 133,0, 27)
-tbxVictim.Visible = true
-tbxVictim.Active = true
-tbxVictim.Draggable = false
-tbxVictim.Selectable = true
-tbxVictim.Font = Enum.Font.SourceSansBold
-tbxVictim.Text = "名字"
-tbxVictim.TextColor3 = Color3.new(0, 0, 0)
-tbxVictim.TextSize = 20
- 
-lblFUCKEMALL.Name = "FUCKEMALL"
-lblFUCKEMALL.Parent = FGUI
-lblFUCKEMALL.BackgroundColor3 = Color3.new(255,255,255)
-lblFUCKEMALL.BorderSizePixel = 1
-lblFUCKEMALL.Position = UDim2.new (0.025, 0,0.856, 0)
-lblFUCKEMALL.Size = UDim2.new (0, 301,0, 27)
-lblFUCKEMALL.Visible = true
-lblFUCKEMALL.Font = Enum.Font.SourceSansBold
-lblFUCKEMALL.Text = "操蛋和操蛋"
-lblFUCKEMALL.TextColor3 = Color3.new(0, 0, 0)
-lblFUCKEMALL.TextSize = 20
- 
-ImageLabel.Name = "ImageLabel"
-ImageLabel.Parent = FGUI
-ImageLabel.Image = "http://www.roblox.com/asset/?id=42837..."
-ImageLabel.BorderSizePixel = 1
-ImageLabel.Position = UDim2.new (0.274, 0,0.358, 0)
-ImageLabel.Size = UDim2.new (0, 106,0, 121)
- 
- 
- 
- 
---Scripts
- 
- 
-btnSex.MouseButton1Click:Connect(function()
- 
-local player = tbxVictim.Text
-local stupid = Instance.new('Animation')
-stupid.AnimationId = 'rbxassetid://148840371'
-hummy = game:GetService("Players").LocalPlayer.Character.Humanoid
-pcall(function()
-    hummy.Parent.Pants:Destroy()
-end)
-pcall(function()
-    hummy.Parent.Shirt:Destroy()
-end)
-local notfunny = hummy:LoadAnimation(stupid)
-notfunny:Play()
-notfunny:AdjustSpeed(10)
-while hummy.Parent.Parent ~= nil do
-wait()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[tbxVictim.Text].Character.HumanoidRootPart.CFrame
-end
-end)
-
-
-end
+	end,
 
 })
 
-Tab:AddButton({
-    Name = "无限跳",
-	Callback = function()
-	loadstring(game:HttpGet("https://pastebin.com/raw/V5PQy3y0", true))()
-	end
-})
+Tab:AddToggle({
 
-Tab:AddButton({
-	Name = "转起来",
-	Callback = function()
-      	loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
-  	end
-})
+    Name = "无视 Glitch",
 
-Tab:AddButton({
+	CurrentValue = false,
 
-	Name = "阿尔宙斯自瞄",
+	Flag = "IgnoreGlitch",
 
-	Callback = function()
+	Callback = function(Value)
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/chillz-workshop/main/Arceus%20Aimbot.lua"))()
+        EnabledEntities.EnabledGlitch = Value
 
-end
+	end,
 
 })
 
-Tab:AddButton({
+Tab:AddToggle({
 
-	Name = "自瞄",
+    Name = "无视 Halt",
 
-	Callback = function()
+	CurrentValue = false,	Flag = "IgnoreHalt",
 
-loadstring(game:HttpGet("https://pastebin.com/raw/1Gp9c57U"))()
+	Callback = function(Value)
 
-end
+        EnabledEntities.EnabledHalt = Value
 
-})
-
-Tab:AddButton({
-
-	Name = "子弹追踪（部分游戏不可用）",
-
-	Callback = function()
-
-local Camera = game:GetService("Workspace").CurrentCamera
-local Players = game:GetService("Players")
-local LocalPlayer = game:GetService("Players").LocalPlayer
-
-local function GetClosestPlayer()
-   local ClosestPlayer = nil
-   local FarthestDistance = math.huge
-
-   for i, v in pairs(Players.GetPlayers(Players)) do
-       if v ~= LocalPlayer and v.Character and v.Character.FindFirstChild(v.Character, "HumanoidRootPart") then
-           local DistanceFromPlayer = (LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
-
-           if DistanceFromPlayer < FarthestDistance then
-               FarthestDistance = DistanceFromPlayer
-               ClosestPlayer = v
-           end
-       end
-   end
-
-   if ClosestPlayer then
-       return ClosestPlayer
-   end
-end
-
-local GameMetaTable = getrawmetatable(game)
-local OldGameMetaTableNamecall = GameMetaTable.__namecall
-setreadonly(GameMetaTable, false)
-
-GameMetaTable.__namecall = newcclosure(function(object, ...)
-   local NamecallMethod = getnamecallmethod()
-   local Arguments = {...}
-
-   if tostring(NamecallMethod) == "FindPartOnRayWithIgnoreList" then
-       local ClosestPlayer = GetClosestPlayer()
-       
-       if ClosestPlayer and ClosestPlayer.Character then
-           Arguments[1] = Ray.new(Camera.CFrame.Position, (ClosestPlayer.Character.Head.Position - Camera.CFrame.Position).Unit * (Camera.CFrame.Position - ClosestPlayer.Character.Head.Position).Magnitude)
-       end
-   end
-
-   return OldGameMetaTableNamecall(object, unpack(Arguments))
-end)
-
-setreadonly(GameMetaTable, true)
-
-end
+	end,
 
 })
 
-Tab:AddButton({
-	Name = "跟踪玩家",
-	Callback = function()
-      	loadstring(game:HttpGet("https://pastebin.com/raw/F9PNLcXk"))()
-  	end
-})
+workspace.Camera.ChildAdded:Connect(function(c)
 
-Tab:AddButton({
-	Name = "点击传送工具",
-	Callback = function()
-mouse = game.Players.LocalPlayer:GetMouse() tool = Instance.new("Tool") tool.RequiresHandle = false tool.Name = "[FE] TELEPORT TOOL" tool.Activated:connect(function() local pos = mouse.Hit+Vector3.new(0,2.5,0) pos = CFrame.new(pos.X,pos.Y,pos.Z) game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos end) tool.Parent = game.Players.LocalPlayer.Backpack
-	end
-})
+    if c.Name == "Screech" then
 
-Tab:AddButton({
+        wait(0.1)
 
-	Name = "变成蛇",
+        if EnabledEntities.EnabledScreech then
 
-	Callback = function()
+            removeDebris(c, 0)
 
-loadstring(game:HttpGet(('https://pastefy.ga/tWBTcE4R/raw'),true))()
+        end
 
-	end
+    end
 
-})
-
-Tab:AddButton({
-
-	Name = "让别让别人控制自己",
-
-	Callback = function()
-
-loadstring(game:HttpGet(('https://pastefy.ga/a7RTi4un/raw'),true))()
-
-	end
-
-})
-
-Tab:AddButton({
-
-	Name = "点击传送工具",
-
-	Callback = function()
-
-mouse = game.Players.LocalPlayer:GetMouse() tool = Instance.new("Tool") tool.RequiresHandle = false tool.Name = "[FE] TELEPORT TOOL" tool.Activated:connect(function() local pos = mouse.Hit+Vector3.new(0,2.5,0) pos = CFrame.new(pos.X,pos.Y,pos.Z) game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos end) tool.Parent = game.Players.LocalPlayer.Backpack
-
-	end
-
-})
-
-Tab:AddButton({
-
-	Name = "无敌",
-
-	Callback = function()
-
-local lp = game:GetService "Players".LocalPlayer
-
-if lp.Character:FindFirstChild "Head" then
-
-    local char = lp.Character
-
-    char.Archivable = true
-
-    local new = char:Clone()
-
-    new.Parent = workspace
-
-    lp.Character = new
-
-    wait(2)
-
-    local oldhum = char:FindFirstChildWhichIsA "Humanoid"
-
-    local newhum = oldhum:Clone()
-
-    newhum.Parent = char
-
-    newhum.RequiresNeck = false
-
-    oldhum.Parent = nil
-
-    wait(2)
-
-    lp.Character = char
-
-    new:Destroy()
-
-    wait(1)
-
-    newhum:GetPropertyChangedSignal("Health"):Connect(
-
-        function()
-
-            if newhum.Health <= 0 then
-
-                oldhum.Parent = lp.Character
-
-                wait(1)
-
-                oldhum:Destroy()
-
-            end
-
-        end)
-
-    workspace.CurrentCamera.CameraSubject = char
-
-    if char:FindFirstChild "Animate" then
-
-        char.Animate.Disabled = true
+    if c.Name == "Shade" then
 
         wait(.1)
 
-        char.Animate.Disabled = false
+        if EnabledEntities.EnabledHalt then
+
+            removeDebris(c, 0)
+
+        end
 
     end
 
-    lp.Character:FindFirstChild "Head":Destroy()
+end)
 
-end
+workspace.CurrentRooms.ChildAdded:Connect(function()
 
-end
+    if EnabledEntities.EnabledGlitch then
+
+        local currentRoom=game.Players.LocalPlayer:GetAttribute("CurrentRoom")
+
+        local roomAmt=#workspace.CurrentRooms:GetChildren()
+
+        local lastRoom=game.ReplicatedStorage.GameData.LatestRoom.Value
+
+    
+
+        if roomAmt>=4 and currentRoom<lastRoom-3 then
+
+            game.Players.LocalPlayer.Character:PivotTo(CFrame.new(lastRoom.RoomStart.Position))
+
+        end    
+
+    end
+
+end)
+
+Tab:AddTextbox({
+
+	Name = "设置金币数量",	PlaceholderText = game.Players.LocalPlayer.PlayerGui.PermUI.Topbar.Knobs.Text,
+
+	RemoveTextAfterFocusLost = false,
+
+	Callback = function(Text)
+
+        require(game.ReplicatedStorage.ReplicaDataModule).event.Knobs:Fire(tonumber(Text))
+
+	end,
+
+})
+
+Tab:AddTextbox({
+
+	Name = "设置复活数量",
+
+	PlaceholderText = game.Players.LocalPlayer.PlayerGui.PermUI.Topbar.Revives.Text,
+
+	RemoveTextAfterFocusLost = false,
+
+	Callback = function(Text)
+
+        require(game.ReplicatedStorage.ReplicaDataModule).event.Revives:Fire(tonumber(Text))
+
+	end,
+
+})
+
+Tab:AddTextbox({
+
+	Name = "设置加成数量（金币加成）",
+
+	PlaceholderText = game.Players.LocalPlayer.PlayerGui.PermUI.Topbar.Boosts.Text,
+
+	RemoveTextAfterFocusLost = false,
+
+	Callback = function(Text)
+
+        require(game.ReplicatedStorage.ReplicaDataModule).event.Boosts:Fire(tonumber(Text))
+
+	end,
+
+})
+
+local Tab = Window:MakeTab({
+
+	Name = "信息与其他",	Icon = "rbxassetid://16060333448",
+
+	PremiumOnly = false
 
 })
 
 Tab:AddButton({
 
-	Name = "甩飞别人",
+	Name = "slience Script old",
 
 	Callback = function()
 
-     loadstring(game:HttpGet("https://pastebin.com/raw/GnvPVBEi"))()
-
-  	end    
-
-})
-
-Tab:AddButton({
-
-	Name = "防止掉线（反挂机）",
-
-	Callback = function()
-
-	print("Anti Afk On")
-
-		local vu = game:GetService("VirtualUser")
-
-		game:GetService("Players").LocalPlayer.Idled:connect(function()
-
-		   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-
-		   wait(1)
-
-		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-
-		end)
+     setclipboard("https://raw.githubusercontent.com/Drop56796/slience-Script-Remake/Script-Remake/Remake%20Script.lua")
 
   	end
-
-})
-
-Tab:AddButton({
-
-	Name = "光影V4",
-
-	Callback = function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/MZEEN2424/Graphics/main/Graphics.xml"))()
-
-end
-
-})
-Tab:AddButton({
-
-	Name = "旧版跟踪",
-
-	Callback = function()
-
-loadstring(game:HttpGet("https://pastebin.com/raw/mBg64nqe"))()
-
-end
-
-})
-
-Tab:AddButton({
-
-	Name = "传送玩家",
-
-	Callback = function()
-
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Infinity2346/Tect-Menu/main/Teleport%20Gui.lua'))()
-
-end
-
-})
-
-local Tab = Window:MakeTab({
-	Name = "惊喜",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-Tab:AddButton({
-
-	Name = "惊喜（doge）",
-
-	Callback = function()
-
--- Script generated by SimpleSpy - credits to exx#9394
-
-game:GetService'RunService'.RenderStepped:Connect(function()
-task.spawn(function() -- prevent blocking frame render
-for i=0,1000,1 do
-    
-local args = {
-    [1] = {
-        [1] = "Wear",
-        [2] = "11297746",
-        [3] = "Hats"
-    }
-}
-
-game:GetService("ReplicatedStorage").WearItem:FireServer(unpack(args))
-end
-end)
-end)
-
-end
-
-})
-
-local Tab = Window:MakeTab({
-	Name = "Doors",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-Tab:AddButton({
-
-	Name = "Insanity Fog Mode V1.4",
-
-	Callback = function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Drop56796/Insanity-Fog-Mode-v1.4/Insanity-Fog-Mode-v1.4-Script/Insanity%20Fog%20Mode%20v1.4%20Script.lua"))()
-		
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "Noah Dark Mode V1",
-
-	Callback = function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Drop56796/Noah-Dark/Noah-Dark-Mode-Script-V1/Noah%20Dark.lua"))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "FFJ1",
-
-	Callback = function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/Loader.lua"))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "Fragmented mode",
-
-	Callback = function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/munciseek/Scriptmode/main/Fragmented"))()
-       
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "impossible mode V1.8",
-
-	Callback = function()
-
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Ukazix/impossible-mode/main/Protected_79.lua.txt'))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "insane mode V5",
-
-	Callback = function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/thefigureblack/doors/main/insanemodev5.lua"))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "Doors Floor2",
-
-	Callback = function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/iCherryKardes/Doors/main/Floor%202%20Mod"))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "Hardcore mode Remake(Please Wait)",
-
-	Callback = function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Drop56796/Hardcore-mode-Remake-V6/Hardcore-mode-Remake-V6/Hardcore%20mode%20Remake.lua"))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "Fear Mode",
-
-	Callback = function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/cool59572/freestuff/main/Mods/FearMode.lua"))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "Troll Mode",
-
-	Callback = function()
-
-
-loadstring(game:HttpGet("https://glot.io/snippets/gotfeffesc/raw/main.lua"))()
-
-    end
 
 })
