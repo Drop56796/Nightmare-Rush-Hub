@@ -1,10 +1,10 @@
-game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "MR-Doors"; Text ="Doors"; Duration = 10; })
+game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "沉默Hub V2Beta"; Text ="沉默Hub V2Beta"; Duration = 10; })
 
 local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
 
-local Window = OrionLib:MakeWindow({Name = "MR-Doors", HidePremium = false, SaveConfig = true,IntroText = "MR-Doors", ConfigFolder = "Doors"})
+local Window = OrionLib:MakeWindow({Name = "沉默Hub V2Beta", HidePremium = false, SaveConfig = true,IntroText = "沉默Hub V2Beta", ConfigFolder = "Doors"})
 
-game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "欢迎使用"; Text ="1.0"; Duration = 10; })
+game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "欢迎使用"; Text ="2.0"; Duration = 10; })
 
 local Tab = Window:MakeTab({
 
@@ -736,7 +736,7 @@ Tab:AddTextbox({
 
 local Tab = Window:MakeTab({
 
-	Name = "信息与其他",	Icon = "rbxassetid://16060333448",
+	Name = "信息与其他",	Icon = "rbxassetid://17222114609",
 
 	PremiumOnly = false
 
