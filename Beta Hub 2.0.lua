@@ -188,6 +188,18 @@ Tab:AddButton({
 
 Tab:AddButton({
 
+    Name = "Noah Dark Mode V1",
+
+    Callback = function ()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Drop56796/Noah-Dark/Noah-Dark-Mode-Script-V1/Noah%20Dark.lua"))()
+
+        end
+
+})
+
+Tab:AddButton({
+
 	Name = "手电筒",
 
 	Callback = function()
