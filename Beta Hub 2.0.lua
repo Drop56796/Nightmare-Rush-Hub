@@ -200,6 +200,30 @@ Tab:AddButton({
 
 Tab:AddButton({
 
+    Name = "Insanity Fog Mode v1.4",
+
+    Callback = function ()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Drop56796/Insanity-Fog-Mode-v1.4/Insanity-Fog-Mode-v1.4-Script/Insanity%20Fog%20Mode%20v1.4%20Script.lua"))()
+			
+        end
+
+})
+
+Tab:AddButton({
+
+    Name = "MSHUB v4.4.2",
+
+    Callback = function ()
+
+     loadstring(game:HttpGet(("https://raw.githubusercontent.com/mstudio45/MSDOORS/main/MSHUB_Loader.lua"),true))()
+			
+        end
+
+})
+
+Tab:AddButton({
+
 	Name = "手电筒",
 
 	Callback = function()
