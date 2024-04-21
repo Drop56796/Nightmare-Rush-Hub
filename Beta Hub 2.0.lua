@@ -14,6 +14,8 @@ local Tab = Window:MakeTab({
 
 })
 
+Tab:AddLabel("沉默Hub BY SLIENCE and 光")
+
 Tab:AddLabel("Mode -- other：") 
 
 Tab:AddButton({
