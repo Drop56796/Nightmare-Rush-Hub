@@ -752,7 +752,8 @@ Tab:AddButton({
 	Callback = function()
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Drop56796/Insanity-Fog-Mode-v1.4/Insanity-Fog-Mode-v1.4-Script/Insanity%20Fog%20Mode%20v1.4%20Script.lua"))()
-end
+		
+    end
 
 })
 
@@ -764,7 +765,7 @@ Tab:AddButton({
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Drop56796/Noah-Dark/Noah-Dark-Mode-Script-V1/Noah%20Dark.lua"))()
 
-end
+    end
 
 })
 
@@ -776,7 +777,7 @@ Tab:AddButton({
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/Loader.lua"))()
 
-end
+    end
 
 })
 
@@ -788,7 +789,7 @@ Tab:AddButton({
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/munciseek/Scriptmode/main/Fragmented"))()
        
-end
+    end
 
 })
 
@@ -800,7 +801,7 @@ Tab:AddButton({
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Ukazix/impossible-mode/main/Protected_79.lua.txt'))()
 
-end
+    end
 
 })
 
@@ -812,7 +813,7 @@ Tab:AddButton({
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/thefigureblack/doors/main/insanemodev5.lua"))()
 
-end
+    end
 
 })
 
@@ -824,7 +825,7 @@ Tab:AddButton({
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/iCherryKardes/Doors/main/Floor%202%20Mod"))()
 
-end
+    end
 
 })
 
@@ -836,7 +837,7 @@ Tab:AddButton({
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Drop56796/Hardcore-mode-Remake-V6/Hardcore-mode-Remake-V6/Hardcore%20mode%20Remake.lua"))()
 
-end
+    end
 
 })
 
@@ -848,7 +849,7 @@ Tab:AddButton({
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/cool59572/freestuff/main/Mods/FearMode.lua"))()
 
-end
+    end
 
 })
 
@@ -861,6 +862,6 @@ Tab:AddButton({
 
 loadstring(game:HttpGet("https://glot.io/snippets/gotfeffesc/raw/main.lua"))()
 
-end
+    end
 
 })
